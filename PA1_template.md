@@ -14,6 +14,7 @@ Process/transform the data (if necessary) into a format suitable for your analys
 
 ```r
 totalSteps<-aggregate(steps~date,data=activity,sum,na.rm=TRUE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ##What is mean total number of steps taken per day?
