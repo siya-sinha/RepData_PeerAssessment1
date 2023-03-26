@@ -5,6 +5,10 @@ output:
     keep_md: true
 ---
 ##Loading the data
+```{r setup, include=FALSE}
+# set global chunk options
+knitr::opts_chunk$set(cache=FALSE)
+```
 Load the data
 ```{r echo=TRUE}
 activity=read.csv("activity.csv")
