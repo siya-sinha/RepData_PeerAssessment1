@@ -16,7 +16,8 @@ totalSteps<-aggregate(steps~date,data=activity,sum,na.rm=TRUE)
 
 ##What is mean total number of steps taken per day?
 Make a histogram of the total number of steps taken each day
-```{r echo=TRUE}
+
+```{r echo=TRUE,fig.height=4}
 hist(totalSteps$steps)
 ```
 
@@ -35,7 +36,7 @@ The **median** total number of steps taken per day is
 ##What is the average daily activity pattern?
 Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
-```{r echo=TRUE}
+```{r echo=TRUE,fig.height=4}
 stepsInterval<-aggregate(steps~interval,data=activity,mean,na.rm=TRUE)
 plot(steps~interval,data=stepsInterval,type="l")
 ```
@@ -75,7 +76,7 @@ cat("Total ",count, "NA values were filled.\n\r")
 ```
 
 Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. 
-```{r echo=TRUE}
+```{r echo=TRUE,fig.height=4}
 totalSteps2<-aggregate(steps~date,data=activityFilled,sum)
 hist(totalSteps2$steps)
 mean(totalSteps2$steps)
@@ -99,7 +100,7 @@ activityFilled$day=factor(activityFilled$day,levels=c("weekday","weekend"))
 
 
 Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). The plot should look something like the following, which was creating using simulated data:
-```{r echo=TRUE}
+```{r echo=TRUE,fig.height=4}
 stepsInterval2=aggregate(steps~interval+day,activityFilled,mean)
 library(lattice)
 xyplot(steps~interval|factor(day),data=stepsInterval2,aspect=1/2,type="l")
